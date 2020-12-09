@@ -5,13 +5,10 @@ const apiKey = process.env.API;
 
 function processWeather(weatherData) {
         if (weatherData.cod === '401' || weatherData.cod === '404' || weatherData.cod === '429') {
-                // 401 non funge, 404 si
                 alert(weatherData.message);
         } else {
                 const dataObj = appInfo(weatherData);
                 displayData(dataObj);
-                console.log(dataObj);
-                //
         }
 }
 
@@ -22,7 +19,6 @@ async function getWeather(location) {
                         { mode: 'cors' }
                 );
                 const weatherData = await response.json();
-                console.log(weatherData);
                 processWeather(weatherData);
         } catch (error) {
                 alert(error);
