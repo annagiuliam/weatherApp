@@ -24,11 +24,8 @@ module.exports = {
       },
     ],
   },
-<<<<<<< HEAD
   // node: {
   //   fs: "empty",
   // },
-=======
->>>>>>> parent of c255a77 (changes to config)
   plugins: [new Dotenv()],
 };
