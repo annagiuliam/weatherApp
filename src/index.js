@@ -1,7 +1,7 @@
 import { appInfo } from "./app-info";
 import { dom } from "./dom";
 
-const apiKey = process.env.API_KEY;
+// const apiKey = process.env.API_KEY;
 
 function processWeather(weatherData) {
   if (
@@ -19,7 +19,7 @@ function processWeather(weatherData) {
 async function getWeather(location) {
   try {
     const response = await fetch(
-      `https://api.openweathermap.org/data/2.5/weather?q=${location}&units=metric&appid=${apiKey}`,
+      `https://api.openweathermap.org/data/2.5/weather?q=${location}&units=metric&appid=${process.env.API_KEY}`,
       { mode: "cors" }
     );
     const weatherData = await response.json();
