@@ -8,9 +8,9 @@ module.exports = {
     filename: "main.js",
     path: path.resolve(__dirname, "dist"),
   },
-  node: {
-    fs: "empty",
-  },
+  //   node: {
+  //     fs: "empty",
+  //   },
   plugins: [
     new webpack.DefinePlugin({
       "process.env": {},
