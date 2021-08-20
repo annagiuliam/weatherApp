@@ -3,6 +3,8 @@ import { dom } from "./dom";
 
 // const apiKey = process.env.API_KEY;
 
+console.log(process.env.API_KEY);
+
 function processWeather(weatherData) {
   if (
     weatherData.cod === "401" ||

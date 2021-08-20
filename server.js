@@ -11,5 +11,10 @@ app.get("*", (req, res) => {
 
 app.listen(port);
 
-if (process.env.NODE_ENV == "development")
-  require("dotenv").config({ silent: true });
+// if (process.env.NODE_ENV == "development") {
+//   require("dotenv").config({ silent: true });
+// }
+
+if (process.env.NODE_ENV !== "production") {
+  require("dotenv").config();
+}
