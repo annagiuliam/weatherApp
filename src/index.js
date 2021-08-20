@@ -24,7 +24,7 @@ async function getWeather(location) {
     );
     const weatherData = await response.json();
     console.log(weatherData);
-    //     processWeather(weatherData);
+    processWeather(weatherData);
   } catch (error) {
     alert(error);
   }
@@ -39,10 +39,10 @@ async function getWeather(location) {
 function displayData(dataObj) {
   dom.dataContainer.style.visibility = "visible";
   dom.location.textContent = `${dataObj.location}, ${dataObj.country}`;
-  dom.icon.src = `http://openweathermap.org/img/wn/${dataObj.icon}@2x.png`;
-  dom.weatherCond.textContent = dataObj.weatherCond;
-  dom.temperature.textContent = `Temperature: ${dataObj.temp} °C`;
-  dom.humidity.textContent = `Humidity: ${dataObj.humidity}%`;
+  // dom.icon.src = `http://openweathermap.org/img/wn/${dataObj.icon}@2x.png`;
+  // dom.weatherCond.textContent = dataObj.weatherCond;
+  // dom.temperature.textContent = `Temperature: ${dataObj.temp} °C`;
+  // dom.humidity.textContent = `Humidity: ${dataObj.humidity}%`;
 }
 
-console.log(getWeather("rome"));
+console.log(getWeather("cologne"));
