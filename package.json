@@ -113,10 +113,8 @@
     "test": "echo \"Error: no test specified\" && exit 1",
     "dev": "webpack serve",
     "build": "webpack",
-    "heroku-postbuild": "webpack --config webpack.prod.js",
     "watch": "webpack --watch",
-   "open" : "webpack serve --open",
-   "start": "node server.js"
+   "open" : "webpack serve --open"
   },
   "repository": {
     "type": "git",
