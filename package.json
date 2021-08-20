@@ -115,7 +115,8 @@
     "build": "webpack",
     "heroku-postbuild": "webpack --config webpack.prod.js",
     "watch": "webpack --watch",
-    "start" : "webpack serve --open"
+   "open" : "webpack serve --open",
+   "start": "node server.js"
   },
   "repository": {
     "type": "git",
