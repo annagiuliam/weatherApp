@@ -1,9 +1,10 @@
+// import { Tooltip, Toast, Popover } from "bootstrap";
+import "bootstrap/dist/css/bootstrap.min.css";
+import "./styles/reset.css";
+import "./styles/styles.css";
 import { appInfo } from "./app-info";
 import { dom } from "./dom";
-
-// const apiKey = process.env.API_KEY;
-
-console.log(process.env.API_KEY);
+const apiKey = "7e87660e41e049a8d2cbec2c53683d8c";
 
 function processWeather(weatherData) {
   if (
