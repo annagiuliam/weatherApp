@@ -11,13 +11,19 @@
 }
 
 
-body {
+html, body, #app-container {
     height: 100%;
     width: 100% ;
     
 }
 
-.hello {
+#app-container {
+  background-image: url("/src/images/azure-sky.jpg");
+  background-repeat: no-repeat;
+
+}
+
+#location {
   color: red;
-  background-color: aliceblue;
+  /* background-color: aliceblue; */
 }

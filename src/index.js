@@ -1,6 +1,6 @@
 // import { Tooltip, Toast, Popover } from "bootstrap";
 import "bootstrap/dist/css/bootstrap.min.css";
-import "./styles/reset.css";
+// import "./styles/reset.css";
 import "./styles/styles.css";
 import { appInfo } from "./app-info";
 import { dom } from "./dom";
