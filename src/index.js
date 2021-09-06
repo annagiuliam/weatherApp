@@ -12,9 +12,12 @@ function processWeather(weatherData) {
     weatherData.cod === "404" ||
     weatherData.cod === "429"
   ) {
+    // fai modal
     alert(weatherData.message);
   } else {
+    console.log(weatherData);
     const dataObj = appInfo(weatherData);
+    console.log(dataObj.icon);
     displayData(dataObj);
   }
 }
@@ -22,11 +25,11 @@ function processWeather(weatherData) {
 async function getWeather(location) {
   try {
     const response = await fetch(
-      `https://api.openweathermap.org/data/2.5/weather?q=${location}&units=metric&appid=${process.env.API_KEY}`,
+      `https://api.openweathermap.org/data/2.5/weather?q=${location}&units=metric&appid=${apiKey}`,
       { mode: "cors" }
     );
     const weatherData = await response.json();
-    console.log(weatherData);
+    // console.log(weatherData);
     processWeather(weatherData);
   } catch (error) {
     alert(error);
@@ -41,8 +44,14 @@ async function getWeather(location) {
 
 function displayData(dataObj) {
   dom.dataContainer.style.visibility = "visible";
-  dom.location.textContent = `${dataObj.location}, ${dataObj.country}`;
-  // dom.icon.src = `http://openweathermap.org/img/wn/${dataObj.icon}@2x.png`;
+  dom.todayTitle.textContent = `Today in ${dataObj.location}`;
+  console.log(dom.todayTitle.textContent);
+  console.log(dataObj.icon);
+  // dom.location.textContent = `${dataObj.location}, ${dataObj.country}`;
+
+  dom.todayIcon.src = `http://openweathermap.org/img/wn/${dataObj.icon}@2x.png`;
+  // dom.todayIcon.src = `http://openweathermap.org/img/wn/01d.png`;
+
   // dom.weatherCond.textContent = dataObj.weatherCond;
   // dom.temperature.textContent = `Temperature: ${dataObj.temp} °C`;
   // dom.humidity.textContent = `Humidity: ${dataObj.humidity}%`;

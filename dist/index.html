@@ -7,8 +7,8 @@
 </head>
 <body>
   <div id="app-container">
-    <div id="form-container" class="mb-3">
-      <form action="#" class="row">
+    <div id="form-container" class="mt-5 mb-3 d-flex justify-content-center">
+      <form action="#" class="row mx-auto">
         <div class="col-auto">
           <input type="text" id="location-input" placeholder="Digit location here" class="form-control w-70">
         </div>
@@ -17,8 +17,21 @@
         </div>
       </form>
     </div>
-    <div id="data-container">
-      <div id="location"></div>
+    <div id="data-container" class="d-flex justify-content-center text-center mt-5">
+      <div id="today-card" style="width: 25%;">
+        <div class="card rounded-0 rounded-top border-bottom-0" >
+          <p id="today-title" class="card-body fw-bold fs-3 mb-0 pb-0"></p>
+       </div>
+       <div class="card border-top-0 rounded-0 rounded-bottom">
+          <img src="" id="today-icon" class="card-img-top w-50 mx-auto " alt="weather icon">
+          <div class="card-body py-0">
+            <h5 id="today-cond" class="card-title">Card title</h5>
+            <p class="card-text">Some quick example text to build on the card title and make up the bulk of the card's content.</p>
+            <a href="#" class="btn btn-primary">Go somewhere</a>
+          </div>
+        </div>
+      </div>
+      
     </div> 
   </div>
 

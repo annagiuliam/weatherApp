@@ -17,9 +17,25 @@ html, body, #app-container {
     
 }
 
-#app-container {
+body {
+  position: relative; 
+  display: flex;
+}
+body::after {
+  content: "";
   background-image: url("/src/images/azure-sky.jpg");
   background-repeat: no-repeat;
+  background-size: cover;
+  opacity: 0.5;
+  position: absolute;
+  top: 0px;
+  right: 0px;
+  bottom: 0px;
+  left: 0px;
+  z-index: -1;
+
+}
+#app-container {
 
 }
 
