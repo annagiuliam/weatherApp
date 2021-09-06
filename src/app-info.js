@@ -1,5 +1,6 @@
 export const appInfo = (weatherData) => {
   const temp = Math.round(weatherData.main.temp);
+  const tempMax = Math.round(weatherData.main.temp_max);
   const location = weatherData.name;
   const { country } = weatherData.sys;
   const weatherCond = weatherData.weather[0].description;

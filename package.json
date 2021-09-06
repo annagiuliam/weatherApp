@@ -4,6 +4,7 @@
   "description": "",
   "private": true,
   "dependencies": {
+    "@fortawesome/fontawesome-free": "^5.15.4",
     "acorn": "^8.4.1",
     "acorn-import-assertions": "^1.7.6",
     "ajv": "^6.12.6",

@@ -50,6 +50,9 @@ function displayData(dataObj) {
   // dom.location.textContent = `${dataObj.location}, ${dataObj.country}`;
 
   dom.todayIcon.src = `http://openweathermap.org/img/wn/${dataObj.icon}@2x.png`;
+  dom.todayTemp.textContent = `${dataObj.temp} °C`;
+  dom.todayCond.textContent = dataObj.weatherCond;
+
   // dom.todayIcon.src = `http://openweathermap.org/img/wn/01d.png`;
 
   // dom.weatherCond.textContent = dataObj.weatherCond;
