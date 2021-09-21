@@ -17,7 +17,6 @@ function processWeather(weatherData) {
   } else {
     console.log(weatherData);
     const dataObj = appInfo(weatherData);
-    console.log(dataObj.icon);
     displayData(dataObj);
   }
 }
@@ -30,6 +29,7 @@ async function getWeather(location) {
     );
     const weatherData = await response.json();
     // console.log(weatherData);
+    console.log(weatherData.main.temp_max);
     processWeather(weatherData);
   } catch (error) {
     alert(error);
@@ -43,15 +43,17 @@ async function getWeather(location) {
 // });
 
 function displayData(dataObj) {
+  console.log(dataObj);
   dom.dataContainer.style.visibility = "visible";
   dom.todayTitle.textContent = `Today in ${dataObj.location}`;
-  console.log(dom.todayTitle.textContent);
-  console.log(dataObj.icon);
+  console.log(dataObj.tempMax);
   // dom.location.textContent = `${dataObj.location}, ${dataObj.country}`;
 
   dom.todayIcon.src = `http://openweathermap.org/img/wn/${dataObj.icon}@2x.png`;
   dom.todayTemp.textContent = `${dataObj.temp} °C`;
   dom.todayCond.textContent = dataObj.weatherCond;
+  dom.todayMax.textContent = `${dataObj.todayMax} °C`;
+  dom.todayMin.textContent = `${dataObj.todayMin} °C`;
 
   // dom.todayIcon.src = `http://openweathermap.org/img/wn/01d.png`;
 

@@ -7,6 +7,8 @@ export const dom = {
   todayIcon: document.querySelector("#today-icon"),
   todayCond: document.querySelector("#today-cond"),
   todayTemp: document.querySelector("#today-temp"),
+  todayMin: document.querySelector("#today-min"),
+  todayMax: document.querySelector("#today-max"),
   //   weatherCond: document.querySelector("#weather-cond"),
   //   temperature: document.querySelector("#temperature"),
   humidity: document.querySelector("#humidity"),

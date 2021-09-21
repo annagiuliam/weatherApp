@@ -23,19 +23,20 @@
         <div class="card rounded-0 rounded-top border-bottom-0" >
           <p id="today-title" class="card-body fw-bold fs-3 mb-0 pb-0"></p>
        </div>
-       <div class="card border-top-0 rounded-0 rounded-bottom text-capitalize">
+       <div class="card border-top-0 rounded-0 rounded-bottom text-capitalize pb-3">
           <img src="" id="today-icon" class="card-img-top w-50 mx-auto " alt="weather icon">
           <div class="card-body py-0">
             <h5 id="today-temp" class="card-title"></h5>
             <h5 id="today-cond" class="card-title"></h5>
-            <div id="min-max">
-              <div id="max-temp">
+            <div id="min-max" class="d-flex justify-content-center align-items-center">
+              <!-- <div id="max-temp" > -->
                 <!-- <i class="fa fa-arrow-alt-circle-up" stile="font-size: 12px;"></i> -->
-                <i class="fa fa-arrow-up"></i>
-                <i class="fa fa-arrow-down"></i>
-                <i class="fa fa-arrow-circle-up"></i>
+                <i class="fa fa-arrow-up me-2"></i>
+                <div id="today-max"></div>
+                <i class="fa fa-arrow-down ms-4 me-2"></i>
+                <div id="today-min"></div>
                 
-              </div>
+              <!-- </div> -->
             </div>
           </div>
         </div>
