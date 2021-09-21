@@ -43,3 +43,7 @@ body::after {
   color: red;
   /* background-color: aliceblue; */
 }
+
+.card {
+  background-color: #ffffff80;
+}
