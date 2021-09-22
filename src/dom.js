@@ -1,6 +1,7 @@
 export const dom = {
+  dataContainer: document.querySelector("#data-container"),
   form: document.querySelector("form"),
-  searchField: document.querySelector("input"),
+  searchField: document.querySelector("#location-input"),
   dataContainer: document.querySelector("#data-container"),
   location: document.querySelector("#location"),
   todayTitle: document.querySelector("#today-title"),
@@ -9,6 +10,7 @@ export const dom = {
   todayTemp: document.querySelector("#today-temp"),
   todayMin: document.querySelector("#today-min"),
   todayMax: document.querySelector("#today-max"),
+  country: document.querySelector("#country"),
   //   weatherCond: document.querySelector("#weather-cond"),
   //   temperature: document.querySelector("#temperature"),
   humidity: document.querySelector("#humidity"),

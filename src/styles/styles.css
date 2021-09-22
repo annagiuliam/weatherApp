@@ -35,8 +35,8 @@ body::after {
   z-index: -1;
 
 }
-#app-container {
-
+#data-container {
+  display: none
 }
 
 #location {
