@@ -4,14 +4,36 @@ import { appInfo } from "./app-info";
 import { dom } from "./dom";
 const apiKey = "7e87660e41e049a8d2cbec2c53683d8c";
 
+dom.form.addEventListener("submit", (e) => {
+  e.preventDefault();
+  if (dom.searchField.value) {
+    getWeather(dom.searchField.value);
+  } else {
+    dom.modal.style.display = "block";
+    dom.modalBody.textContent = "Please enter a city";
+  }
+
+  dom.form.reset();
+});
+
+dom.closeBtn.forEach((btn) => {
+  btn.addEventListener("click", () => (dom.modal.style.display = "none"));
+});
+
 function processWeather(weatherData) {
   if (
-    weatherData.cod === "401" ||
-    weatherData.cod === "404" ||
-    weatherData.cod === "429"
+    // weatherData.cod === "401" ||
+    // weatherData.cod === "404" ||
+    // weatherData.cod === "429"
+    weatherData.message
   ) {
     // fai modal
-    alert(weatherData.message);
+    dom.modal.style.display = "block";
+    const errorMsg =
+      weatherData.message.charAt(0).toUpperCase() +
+      weatherData.message.slice(1);
+    dom.modalBody.textContent = `${errorMsg}`;
+    // alert(weatherData.message);
   } else {
     console.log(weatherData);
     const dataObj = appInfo(weatherData);
@@ -33,12 +55,6 @@ async function getWeather(location) {
     alert(error);
   }
 }
-
-dom.form.addEventListener("submit", (e) => {
-  e.preventDefault();
-  getWeather(dom.searchField.value);
-  dom.form.reset();
-});
 
 function displayData(dataObj) {
   console.log(dataObj);

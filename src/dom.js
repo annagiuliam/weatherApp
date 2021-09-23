@@ -11,7 +11,8 @@ export const dom = {
   todayMin: document.querySelector("#today-min"),
   todayMax: document.querySelector("#today-max"),
   country: document.querySelector("#country"),
-  //   weatherCond: document.querySelector("#weather-cond"),
-  //   temperature: document.querySelector("#temperature"),
   humidity: document.querySelector("#humidity"),
+  modal: document.querySelector(".modal"),
+  modalBody: document.querySelector(".modal-body"),
+  closeBtn: document.querySelectorAll(".close-btn"),
 };
