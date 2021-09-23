@@ -9,37 +9,15 @@ dom.form.addEventListener("submit", (e) => {
   if (dom.searchField.value) {
     getWeather(dom.searchField.value);
   } else {
-    dom.modal.style.display = "block";
+    openModal();
     dom.modalBody.textContent = "Please enter a city";
   }
-
   dom.form.reset();
 });
 
 dom.closeBtn.forEach((btn) => {
   btn.addEventListener("click", () => (dom.modal.style.display = "none"));
 });
-
-function processWeather(weatherData) {
-  if (
-    // weatherData.cod === "401" ||
-    // weatherData.cod === "404" ||
-    // weatherData.cod === "429"
-    weatherData.message
-  ) {
-    // fai modal
-    dom.modal.style.display = "block";
-    const errorMsg =
-      weatherData.message.charAt(0).toUpperCase() +
-      weatherData.message.slice(1);
-    dom.modalBody.textContent = `${errorMsg}`;
-    // alert(weatherData.message);
-  } else {
-    console.log(weatherData);
-    const dataObj = appInfo(weatherData);
-    displayData(dataObj);
-  }
-}
 
 async function getWeather(location) {
   try {
@@ -48,11 +26,23 @@ async function getWeather(location) {
       { mode: "cors" }
     );
     const weatherData = await response.json();
-
-    console.log(weatherData);
     processWeather(weatherData);
   } catch (error) {
     alert(error);
+  }
+}
+
+function processWeather(weatherData) {
+  if (weatherData.message) {
+    openModal();
+    const errorMsg =
+      weatherData.message.charAt(0).toUpperCase() +
+      weatherData.message.slice(1);
+    dom.modalBody.textContent = `${errorMsg}`;
+  } else {
+    console.log(weatherData);
+    const dataObj = appInfo(weatherData);
+    displayData(dataObj);
   }
 }
 
@@ -66,4 +56,8 @@ function displayData(dataObj) {
   dom.todayCond.textContent = dataObj.weatherCond;
   dom.todayMax.textContent = `${dataObj.todayMax} °C`;
   dom.todayMin.textContent = `${dataObj.todayMin} °C`;
+}
+
+function openModal() {
+  dom.modal.style.display = "block";
 }
