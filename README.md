@@ -5,4 +5,4 @@ The user interface is build using Bootstrap.
 How the app works: the user inputs the name of a city and the app returns the current weather in that location.
 
 
-Markup : ![picture alt](images/azure-sky.jpg)
+Markup : ![picture alt](./images/azure-sky.jpg)
