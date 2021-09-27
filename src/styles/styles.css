@@ -6,11 +6,6 @@
           box-sizing: border-box;
 }
 
-:root {
-    
-}
-
-
 html, body, #app-container {
     height: 100%;
     width: 100% ;
@@ -39,10 +34,6 @@ body::after {
   display: none
 }
 
-#location {
-  color: red;
-  /* background-color: aliceblue; */
-}
 
 .card {
   background-color: #ffffff80;
