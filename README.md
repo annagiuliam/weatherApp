@@ -6,6 +6,8 @@ The user interface is build using Bootstrap.
 
 How the app works: the user inputs the name of a city and the app returns the current weather in that location.
 
+To use the app, follow this link: https://annagiuliam.github.io/weatherApp/
+
 
 ## Preview ##
 ![weather app preview](./src/images/weatherAppCropped.gif)
